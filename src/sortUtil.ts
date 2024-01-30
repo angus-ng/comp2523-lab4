@@ -1,7 +1,9 @@
-class SortUtil {
-    collection: number[] | string | LinkedList;
+import { ISortable } from "./ISortable";
+
+export class SortUtil {
+    collection: ISortable;
   
-    constructor(collection: number[] | string | LinkedList) {
+    constructor(collection: ISortable) {
       this.collection = collection;
     }
   
@@ -13,24 +15,12 @@ class SortUtil {
         isSorted = true;
         for (let i = 0; i < lastUnsorted; i++) {
           // HANDLE LINKED LIST LOGIC HERE 
-          if (this.collection instanceof LinkedList) {
-            // HELP! -Sarah
-          }
-  
           // HANDLE LIST OF NUMBERS LOGIC HERE
           // I GOT IT TO WORK WITH ARRAY OF NUMBERS
-          if (this.collection instanceof Array) {
-            if (this.collection[i] > this.collection[i + 1]) {
-              let tempLeft = collection[i];
-              this.collection[i] = this.collection[i+1];
-              this.collection[i+1] = tempLeft;
-              isSorted = false;
+            if (this.collection.compare(this.collection[i], this.collection[i+1])){
+                this.collection.swap(this.collection[i], this.collection[i+1])
             }
-          }
-  
-          // HANDLE STRING LOGIC HERE
-          if (typeof this.collection === "string") {
-            // HELP! -Sarah
+              isSorted = false;
           }
         }
         lastUnsorted--;
@@ -38,6 +28,6 @@ class SortUtil {
     }
   }
   
-  const sortUtil = new SorterUtil([10, 3, -5, 0]);
-  sortUtil.sort();
-  console.log(sorter.collection);
+//   const sortUtil = new SorterUtil([10, 3, -5, 0]);
+//   sortUtil.sort();
+//   console.log(sorter.collection);
