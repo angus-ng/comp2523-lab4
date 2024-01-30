@@ -55,11 +55,15 @@ export class LinkedListGroup implements ISortable {
   }
 
   compare(leftPos: number, rightPos: number): boolean {
-    // Implement this part yourself
+    const leftNode = this.at(leftPos).data;
+    const rightNode = this.at(rightPos).data;
+    return leftNode > rightNode;
   }
 
   swap(leftPos: number, rightPos: number): void {
-    // Implement this part yourself
+    const temp = this.at(leftPos).data
+    this.at(leftPos).data = this.at(rightPos).data;
+    this.at(rightPos).data = temp;
   }
 
   print(): void {

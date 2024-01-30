@@ -17,15 +17,14 @@ export class SortUtil {
           // HANDLE LINKED LIST LOGIC HERE 
           // HANDLE LIST OF NUMBERS LOGIC HERE
           // I GOT IT TO WORK WITH ARRAY OF NUMBERS
-            if (this.collection.compare(this.collection[i], this.collection[i+1])){
-                this.collection.swap(this.collection[i], this.collection[i+1])
+            if (this.collection.compare(i, i+1)){
+                this.collection.swap(i, i+1)
             }
               isSorted = false;
           }
         }
         lastUnsorted--;
       }
-    }
   }
   
 //   const sortUtil = new SorterUtil([10, 3, -5, 0]);

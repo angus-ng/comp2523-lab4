@@ -7,12 +7,16 @@ export class NumberGroup implements ISortable{
         this._data = numGrp;
     }
 
+    get data(): number[] {
+        return this._data;
+    }
+
     get length(): number {
         return this._data.length;
     }
 
     compare(leftPos: number, rightPos: number): boolean {
-        return leftPos > rightPos;
+        return this._data[leftPos] > this._data[rightPos];
     }
 
     swap(leftPos: number, rightPos: number): void {
