@@ -7,6 +7,10 @@ export class CharacterGroup implements ISortable {
         this._data = str;
     }
 
+    get data(): string {
+        return this._data;
+    }
+
     get length(): number {
         return this._data.length;
     }
@@ -14,10 +18,11 @@ export class CharacterGroup implements ISortable {
         return this._data[leftPos].toLowerCase() > this._data[rightPos].toLowerCase();
     }
     swap(leftPos: number, rightPos: number): void {
-        const stringArr = this._data.split("");
-        let tempLeft = this._data[leftPos];
+        let stringArr = this._data.split("");
+        let tempLeft = stringArr[leftPos];
         stringArr[leftPos] = stringArr[rightPos];
         stringArr[rightPos] = tempLeft;
+        this._data = stringArr.join("");
     }
 
 }

@@ -19,8 +19,8 @@ export class SortUtil {
           // I GOT IT TO WORK WITH ARRAY OF NUMBERS
             if (this.collection.compare(i, i+1)){
                 this.collection.swap(i, i+1)
+                isSorted = false;
             }
-              isSorted = false;
           }
         }
         lastUnsorted--;

@@ -1,8 +1,39 @@
+import { CharacterGroup } from "./CharacterGroup";
+import { LinkedListGroup } from "./LinkedListGroup";
 import { NumberGroup } from "./NumberGroup";
-import { SortUtil } from "./sortUtil";
+import { SortUtil } from "./SortUtil";
 
 
-const my = new NumberGroup([30, 3, -15, 0])
-const sorter = new SortUtil(my);
+const numberGroup = new NumberGroup([30, 3, -15, 0])
+const sorter = new SortUtil(numberGroup);
+console.log("unsorted:")
+console.log(numberGroup.data);
 sorter.sort()
-console.log(my.data);
+console.log("sorted:")
+console.log(numberGroup.data);
+
+console.log("-------------------------------");
+
+const characterGroup = new CharacterGroup("Xaeyb");
+const sorter2 = new SortUtil(characterGroup);
+console.log("unsorted:")
+console.log(characterGroup.data);
+sorter2.sort()
+console.log("sorted:")
+console.log(characterGroup.data);
+
+console.log("-------------------------------");
+
+const linkedListGroup = new LinkedListGroup();
+const sorter3 = new SortUtil(linkedListGroup);
+linkedListGroup.add(520)
+linkedListGroup.add(-10)
+linkedListGroup.add(7)
+linkedListGroup.add(4)
+
+console.log("unsorted:")
+linkedListGroup.print()
+sorter3.sort()
+console.log("sorted:")
+linkedListGroup.print()
+
